@@ -1,16 +1,18 @@
 <template>
   <div class="app">
-    <Tweet />
+    <Tweet v-for="tweet in tweets" :tweet="tweet" :key="tweet.id" />
   </div>
 </template>
 
 <script>
 import Tweet from "./components/Tweet.vue";
+let id = 0;
 
 export default {
   data: () => ({
     tweets: [
       {
+        id: id++,
         user: {
           name: "Thoughts of Dog®",
           image: "https://i.imgur.com/b0EdHVV.jpg",
@@ -21,6 +23,7 @@ export default {
           "the human likes to say. that i live here rent free. but i would argue. this housing accommodation. is my payment. for a lifetime of love. and excellent company",
       },
       {
+        id: id++,
         user: {
           name: "Thoughts of Dog®",
           image: "https://i.imgur.com/b0EdHVV.jpg",
@@ -31,6 +34,7 @@ export default {
           "sometimes. the human presses their noggin against mine. to figure out what i’m thinking. so i just think really hard. about how much i love them. and hope they figure it out",
       },
       {
+        id: id++,
         user: {
           name: "Thoughts of Dog®",
           image: "https://i.imgur.com/b0EdHVV.jpg",
